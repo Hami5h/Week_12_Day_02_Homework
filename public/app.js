@@ -8,8 +8,11 @@ const initialize = function() {
   mainMap.addClickEvent();
   mainMap.addMarker(center);
 
-  const button = document.querySelector('#bounce');
-  button.addEventListener('click', mainMap.bounceMarkers.bind(mainMap));
+  const buttonBounce = document.querySelector('#bounce');
+  buttonBounce.addEventListener('click', mainMap.bounceMarkers.bind(mainMap));
+
+  const buttonChicago = document.querySelector('#chicago');
+  buttonChicago.addEventListener('click', mainMap.toChicago.bind(mainMap));
 }
 
 document.addEventListener('DOMContentLoaded', initialize);

@@ -27,15 +27,24 @@ MapWrapper.prototype.addMarker = function(coords) {
     map: this.googleMap,
     infoWindow: infoWindowLocation
   });
-
-    google.maps.event.addListener(marker, 'click', function() {
-      this.infoWindow.open(this.googleMap, marker);
-    });
-    this.markers.push(marker);
+  google.maps.event.addListener(marker, 'click', function() {
+    this.infoWindow.open(this.googleMap, marker);
+  });
+  this.markers.push(marker);
 }
 
- MapWrapper.prototype.bounceMarkers = function() {
-   this.markers.forEach(function(marker) {
-     marker.setAnimation(google.maps.Animation.BOUNCE);
-   });
- }
+MapWrapper.prototype.bounceMarkers = function() {
+  this.markers.forEach(function(marker) {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  });
+}
+
+MapWrapper.prototype.toChicago = function() {
+  const chicago = {
+    lat: 41.854073,
+    lng: -87.619392,
+  }
+  this.googleMap.setCenter(chicago);
+  this.addMarker(chicago);
+  this.googleMap.setZoom(16);
+}
