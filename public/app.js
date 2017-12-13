@@ -14,6 +14,9 @@ const initialize = function() {
   const buttonStopBounce = document.querySelector('#stop-bounce');
   buttonStopBounce.addEventListener('click', mainMap.stopBounce.bind(mainMap));
 
+  const buttonRemoveMarkers = document.querySelector('#remove-markers');
+  buttonRemoveMarkers.addEventListener('click', mainMap.removeMarkers.bind(mainMap));
+
   const buttonChicago = document.querySelector('#chicago');
   buttonChicago.addEventListener('click', mainMap.toChicago.bind(mainMap));
 

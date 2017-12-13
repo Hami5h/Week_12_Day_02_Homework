@@ -45,6 +45,13 @@ MapWrapper.prototype.stopBounce = function() {
   })
 }
 
+MapWrapper.prototype.removeMarkers = function() {
+  this.markers.forEach(function(marker){
+    marker.setMap(null);
+  })
+  this.markers = [];
+}
+
 MapWrapper.prototype.toChicago = function() {
   const chicago = {
     lat: 41.854073,
